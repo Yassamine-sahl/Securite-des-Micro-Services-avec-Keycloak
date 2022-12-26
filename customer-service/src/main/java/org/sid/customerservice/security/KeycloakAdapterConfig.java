@@ -6,16 +6,10 @@ import org.keycloak.adapters.springsecurity.client.KeycloakRestTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration  //=> il permet de configurer la sécurité de l'application
+@Configuration
 public class KeycloakAdapterConfig {
     @Bean
-    public KeycloakSpringBootConfigResolver keycloakConfigResolver(){   //=> il permet de dire au keycloak de lire le fichier application.properties
+    public KeycloakSpringBootConfigResolver keycloakConfigResolver(){
         return new KeycloakSpringBootConfigResolver();
-        //=> tu vas se baser sur le fichier application.properties pour configurer keycloak et pas keycloak.json
     }
-
-    /*@Bean
-        KeycloakRestTemplate keycloakRestTemplate(KeycloakClientRequestFactory keycloakClientRequestFactory){
-        return new KeycloakRestTemplate(keycloakClientRequestFactory);
-    }*/
 }
